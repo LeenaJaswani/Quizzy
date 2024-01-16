@@ -127,7 +127,7 @@
     color: whitesmoke;
   }
   
-  /* Media query for smaller screens */
+  
   @media screen and (max-width: 600px) {
     h1 {
       font-size: 3.2rem;
