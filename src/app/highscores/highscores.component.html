@@ -1,0 +1,10 @@
+<div class="container">
+    <div id="highScores" class="flex-center flex-column">
+      <h1 id="finalScore">Top 5 Scores</h1>
+      <ul id="highScoresList">
+        <li class="high-score" *ngFor="let score of highScores">{{ score.username }} ---- {{ score.score }}</li>
+      </ul>
+      <a routerLink="/" class="btn home">Go Home</a>
+    </div>
+  </div>
+  

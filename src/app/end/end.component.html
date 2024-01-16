@@ -1,0 +1,13 @@
+<div class="container">
+  <div id="end" class="flex-center flex-column">
+    <h1 id="finalScore">{{ mostRecentScore }}</h1>
+    <form>
+      <input type="text" name="username" id="username" placeholder="username" [(ngModel)]="username" (input)="onUsernameChange()">
+      <button (click)="savedHighScore()" type="button" id="saveScoreButton" class="btn highscores-btn" [disabled]="saveScoreButtonDisabled">
+        Save
+      </button>
+    </form>
+    <a routerLink="/quiz" class="btn play-btn">Play Again</a>
+    <a routerLink="/" class="btn home">Go home</a>
+  </div>
+</div>

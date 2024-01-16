@@ -1,0 +1,256 @@
+
+/*  */
+  
+#quiz {
+    /* background-color: #2d3236; */
+    padding: 10px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    width: 70%;
+   
+}
+
+#question {
+    color: #e0e5e7;
+    margin-bottom: 20px;
+    
+    font-size: 1.8rem;
+    min-width: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+.choice-container {
+    display: flex;
+    margin-bottom: 1rem;
+   height: 3rem;
+   align-items: center;
+    width: 70%;
+    font-size: 1rem;
+    /* border: 0.1rem solid rgba(147, 192, 231, 0.25); */
+    background-color: white;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 #48cae4;
+    transform: translateY(-0.1rem);
+}
+
+.choice-prefix {
+    padding: 0.9rem 1.6rem 1rem;
+  
+    background-color: #3a86ff;
+    color: white;
+    border-radius: 0.5rem;
+   
+   
+}
+
+.choice-text {
+    flex: 1;
+    padding: 1.5rem;
+    color: #3a86ff;
+    width: 100%;
+    font-size: 1rem;
+}
+
+
+
+#scorecard{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+   
+    
+}
+
+.prefix{
+    text-align: center;
+    font-size:2rem;
+}
+.main-text{
+  font-size:2rem;
+    text-align: center;
+    color: white;
+}
+#progressBar {
+    /* width: 20rem; */
+    height: 2rem;
+    border: 0.3rem solid #56eb83;
+    margin-top: 1.5rem;
+    border-radius: 1.6rem; /* Add border-radius for rounded corners */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+#progressBarFull {
+    height: 3.4rem;
+    background: linear-gradient(90deg, #56eb8f, #3fd6a6); /* Add gradient for a fancier look */
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+#progressText {
+    font-size: 1.8rem;
+    color: #56eb8f;
+}
+
+/* #progressBar {
+    width: 20rem;
+    height: 3.2rem;
+    border: 0.3rem solid #56eb83;
+    margin-top: 1.5rem;
+    transition: width 1s ease-in-out;
+  }
+  
+  #progressBarFull {
+    height: 3.4rem;
+    background-color: #56eb8f;
+    width: 0;
+  } */
+
+  /* .choice-container.correct .choice-text {
+    color: white;
+}
+
+.choice-container.incorrect .choice-text {
+    color: white;
+} */
+
+  #loader {
+    animation: spinningColor 1.5s ease-in-out infinite;
+    margin: 2.5rem auto;
+    border: 0.313rem dashed #a03ecd;
+  
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  @keyframes spinningColor {
+    0% {
+      transform: rotate(360deg);
+      border-top:0.313rem dashed #9378f7;
+      border-bottom:0.313rem dashed #1046a9;
+    }
+    25% {
+      border-top:0.313rem dashed #9378f7;
+      border-bottom:0.313rem dashed #1046a9;
+    }
+    50% {
+      border-top:0.313rem dashed #9378f7;
+      border-bottom:0.313rem dashed #1046a9;
+    }
+    75% {
+      border-top:0.313rem dashed #9378f7;
+      border-bottom:0.313rem dashed #1046a9;
+    }
+    100% {
+      border-top:5px dashed #9378f7;
+      border-bottom:5px dashed #1046a9;
+    }
+  }
+  /* Responsive Styles */
+@media screen and (max-width: 767px) {
+  .container {
+      width: 100%;
+  }
+
+  #quiz {
+      width: 90%;
+  }
+
+  #question {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+  }
+
+  .choice-container {
+      width: 100%;
+      font-size: 0.9rem;
+      height: 2.5rem;
+  }
+
+  .choice-prefix {
+      padding: 1.1rem 1.2rem 0.8rem;
+      font-size: 0.6rem;
+  }
+
+  .choice-text {
+      padding: 0.6rem;
+      font-size: 0.5rem;
+  }
+
+  .prefix  {
+      font-size: 2rem;
+   
+  }
+  #scorecard{
+   
+    flex-direction: column;
+   
+    
+}
+  #progressBar {
+      height: 1.5rem;
+      margin-top: 1rem;
+  }
+
+  #progressBarFull {
+      height: 2.5rem;
+  }
+
+  #loader {
+      margin: 1.5rem auto;
+      width: 2rem;
+      height: 2rem;
+  }
+  #question {
+  
+    font-size: 1rem;
+  
+
+}
+
+
+}
+
+
+  
+/* quiz.component.css */
+.choice-container.selected {
+    background-color: #ffff99; /* yellow color for selected choice */
+  }
+  
+  .choice-container.correct {
+    background-color: #46d257; /* green color for correct choice */
+    color: white;
+  }
+  
+  .choice-container.incorrect {
+    background-color: #ee1337; /* red color for incorrect choice */
+    color: white;
+  }
+  .next-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+  }
+  
+  .next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50; /* green color for the "Next" button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  

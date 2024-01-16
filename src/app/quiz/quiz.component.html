@@ -1,0 +1,36 @@
+<!-- quiz.component.html -->
+<div class="container">
+    <div id="loader" *ngIf="loading"></div>
+    <div id="quiz" class="justify-center flex-column" *ngIf="!loading && currentQuestion">
+      <div id="scorecard">
+        <div id="scorecard-items">
+          <p id="progressText" class="prefix">Question {{ questionCounter+1  }}/{{ maxQuestions }}</p>
+          <div id="progressBar">
+            <div id="progressBarFull" [style.width.%]="getProgressPercentage()"></div>
+          </div>
+        </div>
+        <div id="scorecard-items">
+          <p class="prefix">Score</p>
+          <h1 class="main-text" id="score">{{ score }}</h1>
+        </div>
+      </div>
+      <div id="question">
+        <h4 [innerHTML]="currentQuestion.question"></h4>
+      </div>
+      <div class="options">
+        <div class="choice-container" *ngFor="let choice of choices; let i = index" 
+          [ngClass]="{'selected': selectedChoice === choice.text, 'incorrect': selectedChoice === choice.text && !choice.isCorrect && !acceptingAnswers, 'correct': selectedChoice === choice.text && choice.isCorrect && !acceptingAnswers}">
+          <p class="choice-prefix">{{ getChoicePrefix(i) }}</p>
+          <p class="choice-text" (click)="checkAnswer(choice.text)" [attr.data-number]="choice.text" [innerHTML]="choice.text">
+            <!-- {{ choice.text }} -->
+          </p>
+        </div>
+      </div>
+      <div class="next-button-container" *ngIf="!acceptingAnswers">
+        <button class="next-button" (click)="nextQuestion()">
+          {{ questionCounter < maxQuestions - 1 ? 'Next' : 'Finish' }}
+        </button>
+      </div>
+      
+    </div>
+</div>
