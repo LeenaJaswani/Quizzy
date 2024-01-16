@@ -1,4 +1,4 @@
-// quiz.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizService } from '../quiz.service';
@@ -25,15 +25,7 @@ export class QuizComponent implements OnInit {
     this.fetchQuestions();
   }
 
-  // fetchQuestions() {
-  //   fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple')
-  //     .then(res => res.json())
-  //     .then(loadedQuestions => {
-  //       this.questions = loadedQuestions.results;
-  //       this.startQuiz();
-  //     })
-  //     .catch(err => console.log(err));
-  // }
+
   fetchQuestions() {
     this.quizService.getQuestions().subscribe(
       (loadedQuestions: any) => {
@@ -44,13 +36,10 @@ export class QuizComponent implements OnInit {
       (error) => {
         // console.error(error);
         if (error.status === 429) {
-          // Handle 429 status code (Too Many Requests)
-          // You may want to navigate to a 404 page or show an error message
+         
           this.router.navigate(['/404']);
         } else {
-          // Handle other errors accordingly
-         // console.error('An unexpected error occurred:', error);
-          // Optionally, you can navigate to a general error page
+      
            this.router.navigate(['/']);
         }
       }
@@ -107,7 +96,7 @@ export class QuizComponent implements OnInit {
       this.incrementScore();
     }
   
-    // Do not automatically go to the next question here
+ 
   }
 
   incrementScore() {
@@ -122,7 +111,7 @@ export class QuizComponent implements OnInit {
     return String.fromCharCode(65 + index);
   }
   finishQuiz() {
-    // You can perform any finishing logic here
+    
     localStorage.setItem('mostRecentScore', this.score.toString());
     this.router.navigate(['/end']);
   }
